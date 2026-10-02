@@ -8,15 +8,15 @@ export default function Home() {
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse at top, rgba(43, 113, 136, 0.12) 0%, rgba(16, 20, 24, 1) 70%)",
+            "radial-gradient(ellipse at top, rgba(43, 113, 136, 0.10) 0%, rgba(244, 247, 249, 1) 70%)",
         }}
       />
-      <div className="absolute inset-0 -z-10 bg-[url('/logo.png')] bg-no-repeat bg-center bg-[length:min(40vw,280px)] opacity-[0.04]" />
-      <div className="absolute inset-x-0 top-0 -z-10 h-[40vh] bg-gradient-to-b from-[#2B7188]/15 via-transparent to-transparent" />
+      <div className="absolute inset-0 -z-10 bg-[url('/logo.png')] bg-no-repeat bg-center bg-[length:min(40vw,280px)] opacity-[0.06]" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-[40vh] bg-gradient-to-b from-[#2B7188]/10 via-transparent to-transparent" />
 
       <div className="flex w-full max-w-5xl flex-col items-center gap-16 text-center sm:gap-20">
         <header className="flex flex-col items-center gap-6">
-          <div className="relative flex items-center justify-center rounded-2xl border border-[#2B7188]/40 bg-[#101418]/80 px-6 py-4 shadow-[0_0_80px_-40px_#2B7188] backdrop-blur-xl sm:px-8">
+          <div className="relative flex items-center justify-center rounded-2xl border border-brand-line bg-white/80 px-6 py-4 shadow-[0_10px_40px_-28px_rgba(18,81,105,0.55)] backdrop-blur-xl sm:px-8">
             <Image
               src="/logo.png"
               alt="Livnexa logo"
@@ -27,22 +27,22 @@ export default function Home() {
             />
           </div>
           <div className="flex flex-col items-center gap-4">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#2B7188]/40 bg-[#2B7188]/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.4em] text-[#7FC9DE] backdrop-blur-xl sm:text-sm">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-line bg-brand-soft px-4 py-1 text-xs font-medium uppercase tracking-[0.4em] text-brand backdrop-blur-xl sm:text-sm">
               Livnexa • Mobile App
             </span>
-            <h1 className="max-w-3xl font-heading text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="max-w-3xl font-heading text-5xl font-bold leading-tight tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-8xl">
               Coming Soon
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-[#B9C6CC] sm:text-xl">
+            <p className="max-w-2xl text-lg leading-relaxed text-body sm:text-xl">
               Livnexa is the next evolution from{" "}
-              <span className="font-alt text-[#7FC9DE]">VENOMAI</span>
+              <span className="font-alt text-brand">VENOMAI</span>
             </p>
           </div>
         </header>
 
         <section className="flex flex-col items-center gap-10">
           <div className="flex flex-col items-center gap-6">
-            <p className="max-w-xl text-base text-[#9FB3BC] sm:text-lg">
+            <p className="max-w-xl text-base text-muted sm:text-lg">
               Built for a dark-tech future, Livnexa is on its way. Stay tuned
               for updates as we get ready to launch.
             </p>
@@ -50,7 +50,7 @@ export default function Home() {
               href="https://www.venomai.tech"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#125169] to-[#2B7188] px-8 py-3 text-base font-semibold text-white shadow-[0_10px_80px_-30px_#2B7188] transition-all duration-300 hover:from-[#084860] hover:to-[#125169] focus:outline-none focus:ring-2 focus:ring-[#2B7188]/60 focus:ring-offset-2 focus:ring-offset-[#101418] sm:px-10 sm:py-4 sm:text-lg"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#125169] to-[#2B7188] px-8 py-3 text-base font-semibold text-white shadow-[0_10px_30px_-18px_rgba(18,81,105,0.7)] transition-all duration-300 hover:from-[#084860] hover:to-[#125169] focus:outline-none focus:ring-2 focus:ring-brand/60 focus:ring-offset-2 focus:ring-offset-background sm:px-10 sm:py-4 sm:text-lg"
             >
               <span>Powered by VENOMAI</span>
               <svg
@@ -71,10 +71,16 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="flex flex-col items-center gap-3 text-sm text-[#7F939D]">
-          <p className="font-heading text-base tracking-wide text-[#9FB3BC] sm:text-lg">
-            <span className="text-[#7FC9DE]">VENOMAI</span> - We make IT happen
+        <footer className="flex flex-col items-center gap-3 text-sm text-muted">
+          <p className="font-heading text-base tracking-wide text-body sm:text-lg">
+            <span className="text-brand">VENOMAI</span> - We make IT happen
           </p>
+          <Link
+            href="/privacy"
+            className="text-muted underline decoration-brand-line underline-offset-4 transition-colors hover:text-brand"
+          >
+            Privacy Policy
+          </Link>
           <p>© {new Date().getFullYear()} VENOMAI. All rights reserved.</p>
         </footer>
       </div>

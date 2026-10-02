@@ -3,23 +3,40 @@
 :root {
   --venomai-primary: #125169;
   --venomai-secondary: #084860;
-  --venomai-accent: #2B7188;
-  --venomai-dark-gray: #484848;
-  --venomai-gray: #808080;
-  --venomai-white: #FFFFFF;
-  --venomai-background: #101418;
+  --venomai-accent: #2b7188;
+  --venomai-dark-gray: #3c4a52;
+  --venomai-gray: #5f7079;
+  --venomai-white: #ffffff;
+  --venomai-background: #f4f7f9;
 
   --font-heading: "Rajdhani", sans-serif;
   --font-alt-heading: "Oxanium", sans-serif;
   --font-body: "Inter", sans-serif;
 
+  --surface: #ffffff;
+  --line: #d7e2e8;
+  --ink: #0e1820;
+  --body-text: #36474f;
+  --muted: #5f7079;
+  --brand: #125169;
+  --brand-soft: #e7f0f4;
+  --brand-line: #bbd6e0;
+
   --background: var(--venomai-background);
-  --foreground: var(--venomai-white);
+  --foreground: var(--ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-body: var(--body-text);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-line: var(--brand-line);
   --color-primary: var(--venomai-primary);
   --color-secondary: var(--venomai-secondary);
   --color-accent: var(--venomai-accent);
@@ -32,6 +49,6 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--body-text);
   font-family: var(--font-body);
 }
