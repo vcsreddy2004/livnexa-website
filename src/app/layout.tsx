@@ -19,7 +19,12 @@ const oxanium = Oxanium({
   weight: ["600", "700"],
 });
 
+const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "http://localhost:3000"
+).replace(/\/+$/, "");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "LivNexa: PG management without spreadsheet chaos",
   description:
     "Manage PGs, hostels, residents and rent in one simple app. Set up rooms and beds, track dues, approve payment proof and keep residents informed with LivNexa.",
@@ -29,6 +34,14 @@ export const metadata: Metadata = {
       "One simple app for property setup, resident records, rent tracking and payment approvals.",
     type: "website",
     siteName: "LivNexa",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 800,
+        height: 449,
+        alt: "LivNexa: PG management without spreadsheet chaos",
+      },
+    ],
   },
   robots: {
     index: true,
