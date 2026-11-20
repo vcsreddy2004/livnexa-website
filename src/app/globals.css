@@ -24,6 +24,15 @@
 
   --background: var(--venomai-background);
   --foreground: var(--ink);
+
+  --liv-green: #1b5e20;
+  --liv-deep: #0b3d0f;
+  --liv-accent: #4c8c4a;
+  --liv-soft: #f5f7f5;
+  --liv-ink: #17251a;
+  --liv-muted: #647168;
+  --liv-body-font: var(--font-body);
+  --liv-heading-font: var(--font-heading);
 }
 
 @theme inline {
@@ -42,7 +51,15 @@
   --color-accent: var(--venomai-accent);
   --color-gray: var(--venomai-gray);
   --color-dark-gray: var(--venomai-dark-gray);
+  --color-liv-green: var(--liv-green);
+  --color-liv-deep: var(--liv-deep);
+  --color-liv-accent: var(--liv-accent);
+  --color-liv-soft: var(--liv-soft);
+  --color-liv-ink: var(--liv-ink);
+  --color-liv-muted: var(--liv-muted);
   --font-sans: var(--font-body);
+  --font-liv-body: var(--liv-body-font);
+  --font-liv-heading: var(--liv-heading-font);
   --font-heading: var(--font-heading);
   --font-alt: var(--font-alt-heading);
 }
@@ -51,4 +68,27 @@ body {
   background: var(--background);
   color: var(--body-text);
   font-family: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+:focus-visible {
+  outline: 3px solid #7db77d;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }

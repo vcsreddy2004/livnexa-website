@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Rajdhani, Oxanium } from "next/font/google";
 import "./globals.css";
 
@@ -20,9 +20,24 @@ const oxanium = Oxanium({
 });
 
 export const metadata: Metadata = {
-  title: "Livnexa — Coming Soon",
+  title: "LivNexa: PG management without spreadsheet chaos",
   description:
-    "Livnexa by VenomAI. AI-powered mobile app coming soon. Built by VENOMAI — We make IT happen.",
+    "Manage PGs, hostels, residents and rent in one simple app. Set up rooms and beds, track dues, approve payment proof and keep residents informed with LivNexa.",
+  openGraph: {
+    title: "LivNexa: PG management without spreadsheet chaos",
+    description:
+      "One simple app for property setup, resident records, rent tracking and payment approvals.",
+    type: "website",
+    siteName: "LivNexa",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1B5E20",
 };
 
 export default function RootLayout({
@@ -35,7 +50,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${rajdhani.variable} ${oxanium.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[var(--venomai-background)]">
+      <body className="min-h-full flex flex-col">
         {children}
       </body>
     </html>

@@ -6,7 +6,7 @@ const CONTACT_EMAIL = "contact@venomai.in";
 const EFFECTIVE_DATE = "October 2, 2026";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Livnexa",
+  title: "Privacy Policy | Livnexa",
   description:
     "How Livnexa collects, uses, stores and protects your personal data. Livnexa collects only your name, email address, phone number and address.",
 };
@@ -26,10 +26,10 @@ const sections: Section[] = [
       "Livnexa collects only the information you give us directly. We do not use background sensors, and we do not build a profile of how you use your device.",
     ],
     items: [
-      "Name — the name shown on your Livnexa account.",
-      "Email address — used to sign you in, verify your account and reach you about your account or the service.",
-      "Phone number — used for account verification and, if you opt in, important service messages by SMS or call.",
-      "Address — used to verify your identity and to determine the country or region your account operates in. Livnexa is a digital service, so we never send physical goods to this address.",
+      "Name: the name shown on your Livnexa account.",
+      "Email address: used to sign you in, verify your account and reach you about your account or the service.",
+      "Phone number: used for account verification and, if you opt in, important service messages by SMS or call.",
+      "Address: used to verify your identity and to determine the country or region your account operates in. Livnexa is a digital service, so we never send physical goods to this address.",
     ],
   },
   {
