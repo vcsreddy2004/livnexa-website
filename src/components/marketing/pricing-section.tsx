@@ -1,12 +1,24 @@
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowUpRightFromSquare,
+  faBell,
+  faCheck,
+  faFileShield,
+  faIndianRupeeSign,
+  faLock,
+  faMobileScreenButton,
+  faShieldHalved,
+} from "@fortawesome/free-solid-svg-icons";
 import { Container, SectionHeading, StoreButton } from "./ui";
 
-const securityItems = [
-  ["◉", "Firebase phone OTP", "Phone number verification"],
-  ["⌑", "Secure sessions", "Protected sign-in sessions"],
-  ["₹", "Razorpay", "Subscription payments"],
-  ["♧", "Push notifications", "Updates and rent reminders"],
-  ["▤", "Private document storage", "Secure access to uploaded files"],
-  ["⌑", "HTTPS protection", "Encrypted connections"],
+const securityItems: [IconDefinition, string, string][] = [
+  [faMobileScreenButton, "Firebase phone OTP", "Phone number verification"],
+  [faLock, "Secure sessions", "Protected sign-in sessions"],
+  [faIndianRupeeSign, "Razorpay", "Subscription payments"],
+  [faBell, "Push notifications", "Updates and rent reminders"],
+  [faFileShield, "Private document storage", "Secure access to uploaded files"],
+  [faShieldHalved, "HTTPS protection", "Encrypted connections"],
 ];
 
 export function PricingSection() {
@@ -40,15 +52,19 @@ export function PricingSection() {
                 "Track rent details and payment history",
               ].map((item) => (
                 <li
-                  className="relative border-b border-[#f0f3f0] py-2 pl-[22px] text-xs text-[#58665b] before:absolute before:left-0 before:text-liv-green before:content-['✓']"
+                  className="relative border-b border-[#f0f3f0] py-2 pl-[22px] text-xs text-[#58665b]"
                   key={item}
                 >
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    className="absolute left-0 top-2.5 text-liv-green"
+                  />
                   {item}
                 </li>
               ))}
             </ul>
             <StoreButton tone="outline" className="text-center text-[13px]">
-              Get started on Google Play <span>↗</span>
+              Get started on Google Play <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </StoreButton>
             <small className="mt-3 text-center text-[9px] text-[#89948b]">
               No subscription fee for Home &amp; Land property management.
@@ -91,15 +107,19 @@ export function PricingSection() {
                 "After the starter period, monthly pricing is based on your bed limit",
               ].map((item) => (
                 <li
-                  className="relative border-b border-[#f0f3f0] py-2 pl-[22px] text-xs text-[#58665b] before:absolute before:left-0 before:text-liv-green before:content-['✓']"
+                  className="relative border-b border-[#f0f3f0] py-2 pl-[22px] text-xs text-[#58665b]"
                   key={item}
                 >
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    className="absolute left-0 top-2.5 text-liv-green"
+                  />
                   {item}
                 </li>
               ))}
             </ul>
             <StoreButton className="text-center text-[13px]">
-              Continue on Google Play <span>↗</span>
+              Continue on Google Play <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </StoreButton>
             <small className="mt-3 text-center text-[9px] text-[#89948b]">
               Open LivNexa from Google Play to choose your plan and complete
@@ -135,7 +155,7 @@ export function SecuritySection() {
               key={title}
             >
               <span className="row-span-2 grid size-8 place-items-center rounded-[9px] bg-[#e9f3e8] font-extrabold text-liv-green">
-                {icon}
+                <FontAwesomeIcon icon={icon} />
               </span>
               <b className="text-xs max-[700px]:text-[10px]">{title}</b>
               <small className="text-[10px] text-[#879188] max-[700px]:text-[9px]">

@@ -1,3 +1,13 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowDown,
+  faArrowRight,
+  faArrowUpRightFromSquare,
+  faBell,
+  faCheck,
+  faChevronDown,
+  faHouse,
+} from "@fortawesome/free-solid-svg-icons";
 import { Container, Eyebrow, StoreButton, TextLink } from "./ui";
 
 function DashboardPreview() {
@@ -37,7 +47,7 @@ function DashboardPreview() {
             </h3>
           </div>
           <div className="rounded-[7px] border border-[#e8ece8] px-2 py-[6px] text-[9px] font-bold text-[#47544a] max-[700px]:text-[8px]">
-            Green View PG <span className="ml-3">⌄</span>
+            Green View PG <FontAwesomeIcon icon={faChevronDown} className="ml-3" />
           </div>
         </div>
         <div className="grid grid-cols-3 gap-[9px] max-[380px]:gap-[5px]">
@@ -106,7 +116,7 @@ function DashboardPreview() {
           </div>
           <div className="flex min-w-0 flex-col items-start rounded-[9px] border border-[#edf0ed] bg-[#f7faf7] p-3 max-[700px]:hidden">
             <div className="mb-[9px] grid size-[26px] place-items-center rounded-lg bg-[#e3f1e4] text-liv-green">
-              ✓
+              <FontAwesomeIcon icon={faCheck} />
             </div>
             <small className="text-[8px] font-extrabold tracking-[1.2px] text-[#849087]">
               NEEDS YOUR REVIEW
@@ -117,13 +127,15 @@ function DashboardPreview() {
             </p>
             <div className="flex w-full justify-between border-t border-[#e5ece5] pt-[9px] text-[8px] font-extrabold text-liv-green">
               <span>Review proof</span>
-              <span>→</span>
+              <FontAwesomeIcon icon={faArrowRight} />
             </div>
           </div>
         </div>
       </div>
       <div className="absolute -bottom-1 -right-5 flex items-center gap-2.5 rounded-[11px] border border-[#edf0ed] bg-white px-3.5 py-[11px] shadow-[0_12px_30px_#193e1b17] max-[700px]:right-[-8px]">
-        <span className="grid size-7 place-items-center rounded-lg bg-[#eff7ef] text-liv-green">♢</span>
+        <span className="grid size-7 place-items-center rounded-lg bg-[#eff7ef] text-liv-green">
+          <FontAwesomeIcon icon={faBell} />
+        </span>
         <span>
           <b className="block text-[10px]">Rent reminder</b>
           <small className="block text-[8px] text-[#879188]">Sent to residents</small>
@@ -131,7 +143,9 @@ function DashboardPreview() {
         <i className="size-1.5 rounded-full bg-[#16a34a]" />
       </div>
       <div className="absolute left-[-24px] top-[45px] flex items-center gap-2.5 rounded-[11px] border border-[#edf0ed] bg-white px-3.5 py-[11px] shadow-[0_12px_30px_#193e1b17] max-[700px]:left-[-10px] max-[700px]:top-[25px]">
-        <span className="text-xl text-liv-green">⌂</span>
+        <span className="text-xl text-liv-green">
+          <FontAwesomeIcon icon={faHouse} />
+        </span>
         <span>
           <b className="block text-[10px]">40 beds</b>
           <small className="block text-[8px] text-[#879188]">One property</small>
@@ -161,14 +175,16 @@ export function HeroSection() {
               reminders. A clear experience for owners and residents alike.
             </p>
             <div className="mt-[29px] flex items-center gap-[26px]">
-              <StoreButton>Get started <span aria-hidden="true">↗</span></StoreButton>
+              <StoreButton>
+                Get started <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </StoreButton>
               <TextLink href="#how-it-works">
-                See how it works <span aria-hidden="true">↓</span>
+                See how it works <FontAwesomeIcon icon={faArrowDown} />
               </TextLink>
             </div>
             <div className="mt-7 flex items-center gap-2 text-xs text-[#617064]">
               <span className="grid size-[18px] place-items-center rounded-full bg-[#e4f1e3] font-extrabold text-liv-green">
-                ✓
+                <FontAwesomeIcon icon={faCheck} />
               </span>
               Built around everyday PG and hostel work
             </div>

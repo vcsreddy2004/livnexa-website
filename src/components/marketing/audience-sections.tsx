@@ -1,3 +1,19 @@
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowUpRightFromSquare,
+  faBars,
+  faBell,
+  faCheck,
+  faChevronRight,
+  faCloudArrowUp,
+  faEllipsis,
+  faHouse,
+  faIndianRupeeSign,
+  faSun,
+  faUser,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 import { Container, Eyebrow, StoreButton, TextLink } from "./ui";
 
 const ownerBenefits = [
@@ -21,9 +37,17 @@ const residentBenefits = [
 
 function BenefitList({ items }: { items: string[] }) {
   return (
-    <ul className="my-[25px] mb-[30px] list-none p-0 [&>li]:relative [&>li]:my-[13px] [&>li]:pl-7 [&>li]:text-[13px] [&>li]:leading-[1.65] [&>li]:text-[#526056] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:top-0 [&>li]:before:grid [&>li]:before:size-[18px] [&>li]:before:place-items-center [&>li]:before:rounded-full [&>li]:before:bg-[#e5f2e5] [&>li]:before:font-extrabold [&>li]:before:text-[11px] [&>li]:before:text-liv-green [&>li]:before:content-['✓']">
+    <ul className="my-[25px] mb-[30px] list-none p-0">
       {items.map((item) => (
-        <li key={item}>{item}</li>
+        <li
+          className="relative my-[13px] pl-7 text-[13px] leading-[1.65] text-[#526056]"
+          key={item}
+        >
+          <span className="absolute left-0 top-0 grid size-[18px] place-items-center rounded-full bg-[#e5f2e5] text-[11px] text-liv-green">
+            <FontAwesomeIcon icon={faCheck} />
+          </span>
+          {item}
+        </li>
       ))}
     </ul>
   );
@@ -39,7 +63,9 @@ function OwnerPreview() {
     <div className="mx-auto w-full max-w-[470px] rotate-[-1deg] rounded-[17px] border border-[#e8eee8] bg-white p-[25px] shadow-[0_18px_50px_rgba(20,50,25,0.09)]">
       <div className="flex justify-between text-[9px] font-extrabold tracking-[1.2px] text-[#89958b]">
         <span>OWNER OVERVIEW</span>
-        <span className="tracking-[2px]">•••</span>
+        <span className="tracking-[2px]">
+          <FontAwesomeIcon icon={faEllipsis} />
+        </span>
       </div>
       <h3 className="mb-[17px] mt-[17px] font-liv-heading text-[21px] font-extrabold">
         Green View PG
@@ -98,10 +124,10 @@ function OwnerPreview() {
         </div>
       ))}
       <div className="mt-[14px] flex justify-between rounded-[9px] bg-[#f8faf8] px-2.5 py-3.5 text-[8px] text-[#748075]">
-        <span>⌂ Overview</span>
-        <span>♙ Residents</span>
-        <span>₹ Payments</span>
-        <span>☰ More</span>
+        <span><FontAwesomeIcon icon={faHouse} /> Overview</span>
+        <span><FontAwesomeIcon icon={faUsers} /> Residents</span>
+        <span><FontAwesomeIcon icon={faIndianRupeeSign} /> Payments</span>
+        <span><FontAwesomeIcon icon={faBars} /> More</span>
       </div>
     </div>
   );
@@ -114,7 +140,7 @@ function ResidentPreview() {
         <div className="relative z-[1] mx-auto mb-[5px] mt-[-1px] h-[13px] w-[75px] rounded-b-xl bg-[#1c2c20]" />
         <div className="min-h-[430px] rounded-[23px] bg-[#f7faf7] px-[14px] pb-[13px] pt-5">
           <div className="text-[8px] font-extrabold tracking-[1px] text-[#829084]">
-            GOOD MORNING <span className="float-right">☀</span>
+            GOOD MORNING <span className="float-right"><FontAwesomeIcon icon={faSun} /></span>
           </div>
           <h3 className="mb-[15px] mt-2 font-liv-heading text-[23px] font-extrabold leading-[1.2]">
             Your home,
@@ -123,7 +149,7 @@ function ResidentPreview() {
           </h3>
           <div className="flex items-center gap-[9px] rounded-[10px] bg-white p-2.5 shadow-[0_3px_12px_#1a401a0a]">
             <span className="grid size-[34px] place-items-center rounded-lg bg-[#e4f0e3] text-liv-green">
-              ⌂
+              <FontAwesomeIcon icon={faHouse} />
             </span>
             <span className="flex-1">
               <b className="block text-[9px]">Green View PG</b>
@@ -131,7 +157,9 @@ function ResidentPreview() {
                 Room 204 · Bed 2
               </small>
             </span>
-            <span className="text-[#829084]">›</span>
+            <span className="text-[#829084]">
+              <FontAwesomeIcon icon={faChevronRight} />
+            </span>
           </div>
           <div className="relative mt-3 rounded-[11px] border border-[#e9eee9] bg-white p-[13px]">
             <small className="block text-[8px] font-extrabold tracking-[1px] text-[#879188]">
@@ -152,16 +180,22 @@ function ResidentPreview() {
           </h4>
           <div className="grid grid-cols-2 gap-2">
             <div className="rounded-[9px] bg-white p-2.5">
-              <span className="block text-[15px] text-liv-green">₹</span>
+              <span className="block text-[15px] text-liv-green">
+                <FontAwesomeIcon icon={faIndianRupeeSign} />
+              </span>
               <small className="text-[8px] text-[#718074]">Payment history</small>
             </div>
             <div className="rounded-[9px] bg-white p-2.5">
-              <span className="block text-[15px] text-liv-green">↗</span>
+              <span className="block text-[15px] text-liv-green">
+                <FontAwesomeIcon icon={faCloudArrowUp} />
+              </span>
               <small className="text-[8px] text-[#718074]">Send proof</small>
             </div>
           </div>
           <div className="mt-2.5 flex items-center gap-[9px] rounded-[9px] bg-[#eaf3e9] p-2.5 text-liv-green">
-            <span className="text-[17px]">♧</span>
+            <span className="text-[17px]">
+              <FontAwesomeIcon icon={faBell} />
+            </span>
             <span>
               <b className="block text-[8px]">Stay updated</b>
               <small className="block text-[7px] text-[#68816a]">
@@ -170,14 +204,14 @@ function ResidentPreview() {
             </span>
           </div>
           <div className="mt-4 flex justify-between border-t border-[#e8eee8] pt-[11px] text-[#527354]">
-            {[
-              ["⌂", "Home"],
-              ["₹", "Payments"],
-              ["♧", "Updates"],
-              ["♙", "Profile"],
-            ].map(([icon, label]) => (
+            {([
+              [faHouse, "Home"],
+              [faIndianRupeeSign, "Payments"],
+              [faBell, "Updates"],
+              [faUser, "Profile"],
+            ] as [IconDefinition, string][]).map(([icon, label]) => (
               <span className="text-center text-xs" key={label}>
-                {icon}
+                <FontAwesomeIcon icon={icon} />
                 <small className="block text-[7px] text-[#839087]">{label}</small>
               </span>
             ))}
@@ -186,7 +220,7 @@ function ResidentPreview() {
       </div>
       <div className="absolute bottom-[58px] right-0 flex items-center gap-[9px] rounded-[11px] border border-[#e8eee8] bg-white p-3 shadow-[0_18px_50px_rgba(20,50,25,0.09)] max-[700px]:bottom-[45px]">
         <span className="grid size-7 place-items-center rounded-full bg-[#e4f3e7] text-[#16803a]">
-          ✓
+          <FontAwesomeIcon icon={faCheck} />
         </span>
         <span>
           <b className="block text-[10px]">Proof submitted</b>
@@ -238,7 +272,9 @@ export function OwnerSection() {
             description="Spend less time checking notebooks and following up one by one. LivNexa brings the day-to-day property tasks into a single owner experience."
             benefits={ownerBenefits}
           >
-            <StoreButton>Get the owner app <span>↗</span></StoreButton>
+            <StoreButton>
+              Get the owner app <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            </StoreButton>
           </AudienceCopy>
           <OwnerPreview />
         </div>
@@ -268,7 +304,7 @@ export function ResidentSection() {
                 Your owner must review and approve it.
               </p>
               <TextLink href="https://play.google.com/store/apps/details?id=in.venomai.livnexa">
-                Find LivNexa on Google Play <span>↗</span>
+                Find LivNexa on Google Play <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </TextLink>
             </AudienceCopy>
           </div>

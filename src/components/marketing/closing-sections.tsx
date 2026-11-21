@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { FaqAccordion } from "./faq-accordion";
 import {
@@ -43,7 +45,7 @@ export function FinalCallToAction() {
             </p>
           </div>
           <StoreButton tone="white" className="flex-none">
-            Get started <span>↗</span>
+            Get started <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </StoreButton>
         </div>
       </Container>

@@ -1,5 +1,7 @@
 "use client";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { BrandLink, Container, storeUrl } from "./ui";
 
@@ -55,7 +57,7 @@ export function SiteNavigation() {
               rel="noopener"
               onClick={() => setIsOpen(false)}
             >
-              Get started <span aria-hidden="true">↗</span>
+              Get started <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </a>
           </div>
         </nav>

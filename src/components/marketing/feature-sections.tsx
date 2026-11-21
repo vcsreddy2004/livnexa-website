@@ -1,106 +1,124 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import {
+  faBell,
+  faCheck,
+  faFileShield,
+  faHouse,
+  faIndianRupeeSign,
+  faLayerGroup,
+  faMobileScreen,
+  faMobileScreenButton,
+  faTableCellsLarge,
+  faUserPlus,
+  faUsers,
+  faUsersGear,
+} from "@fortawesome/free-solid-svg-icons";
 import { Container, SectionHeading } from "./ui";
 
-const features = [
+type Feature = {
+  color: string;
+  icon: IconDefinition;
+  title: string;
+  description: string;
+  wide?: boolean;
+};
+
+const features: Feature[] = [
   {
     color: "bg-[#e7f2e7] text-liv-green",
-    icon: "▣",
+    icon: faMobileScreenButton,
     title: "Phone OTP Login",
     description:
       "Owners and residents sign in with a phone number. No passwords to remember.",
   },
   {
     color: "bg-[#e5f5ef] text-[#24835c]",
-    icon: "⌂",
+    icon: faHouse,
     title: "Property Setup",
     description:
       "Manage PGs with floors, rooms and beds, or simple units for Home and Land properties.",
   },
   {
     color: "bg-[#eaf0fc] text-[#3564b7]",
-    icon: "♙",
+    icon: faUsers,
     title: "Resident Records",
     description:
       "Keep rent, deposit, due day, move dates, emergency contact, notes, photo and ID proof together.",
   },
   {
     color: "bg-[#fff2dc] text-[#ad7417]",
-    icon: "▦",
+    icon: faTableCellsLarge,
     title: "Floors, Rooms & Beds",
     description:
       "Set room sharing from 1 to 5 or custom capacity, define rent and track each bed's status.",
   },
   {
     color: "bg-[#e7f2e7] text-liv-green",
-    icon: "₹",
+    icon: faIndianRupeeSign,
     title: "Rent & Payments",
     description:
       "Track paid, pending, partial and overdue dues. Record Cash, UPI, Bank Transfer or Other.",
   },
   {
     color: "bg-[#fbeceb] text-[#ba5b54]",
-    icon: "✓",
+    icon: faCheck,
     title: "Payment Proof Approval",
     description:
       "Residents send a screenshot for review. It counts as paid only after the owner approves it.",
   },
   {
     color: "bg-[#fff2dc] text-[#ad7417]",
-    icon: "♧",
+    icon: faBell,
     title: "Automatic Reminders",
     description:
       "Scheduled rent reminders and payment updates help keep owners and residents informed.",
   },
   {
     color: "bg-[#eaf0fc] text-[#3564b7]",
-    icon: "▤",
+    icon: faMobileScreen,
     title: "Dedicated Resident Portal",
     description:
       "Residents get their own app experience for property details, dues, payment history and profile.",
   },
   {
     color: "bg-[#e7f2e7] text-liv-green",
-    icon: "₹",
+    icon: faIndianRupeeSign,
     title: "Subscription Billing",
     description:
       "PG subscription pricing is based on the bed limit, with trial, activation and renewal through Razorpay.",
   },
   {
     color: "bg-[#e5f5ef] text-[#24835c]",
-    icon: "▥",
+    icon: faLayerGroup,
     title: "Multi-Property Dashboard",
     description:
       "Switch between properties and review summary figures, recent payments and resident details.",
   },
   {
     color: "bg-[#eaf0fc] text-[#3564b7]",
-    icon: "♧",
+    icon: faFileShield,
     title: "Secure Documents",
     description:
       "Profile photos and ID proofs are stored privately and accessed through time-limited secure links.",
-  },
-  {
-    color: "bg-[#fbeceb] text-[#ba5b54]",
-    icon: "↻",
-    title: "In-App Updates",
-    description:
-      "Android users can be prompted to update LivNexa through the Google Play in-app update flow.",
+    wide: true,
   },
 ];
 
-const trustItems = [
-  ["⌂", "Made for PG & hostel workflows"],
-  ["◉", "Separate owner and resident experiences"],
-  ["▣", "Phone OTP sign-in"],
-  ["✓", "Razorpay subscription billing"],
+const trustItems: [IconDefinition, string][] = [
+  [faHouse, "Made for PG & hostel workflows"],
+  [faUsersGear, "Separate owner and resident experiences"],
+  [faMobileScreenButton, "Phone OTP sign-in"],
+  [faCheck, "Razorpay subscription billing"],
 ];
 
-const steps = [
-  ["▣", "Sign in securely", "Use your phone number and OTP. No password required."],
-  ["⌂", "Add your property", "Create a property and share its resident login link."],
-  ["▦", "Set up spaces", "Add floors, rooms and beds, or units for Home and Land."],
-  ["♙", "Add residents", "Enter rent, security deposit and monthly due day."],
-  ["₹", "Track payments", "Record collections and review resident-submitted proof."],
-  ["♧", "Stay in the loop", "Residents receive reminders and can send proof from their app."],
+const steps: [IconDefinition, string, string][] = [
+  [faMobileScreenButton, "Sign in securely", "Use your phone number and OTP. No password required."],
+  [faHouse, "Add your property", "Create a property and share its resident login link."],
+  [faTableCellsLarge, "Set up spaces", "Add floors, rooms and beds, or units for Home and Land."],
+  [faUserPlus, "Add residents", "Enter rent, security deposit and monthly due day."],
+  [faIndianRupeeSign, "Track payments", "Record collections and review resident-submitted proof."],
+  [faBell, "Stay in the loop", "Residents receive reminders and can send proof from their app."],
 ];
 
 export function TrustStrip() {
@@ -113,7 +131,7 @@ export function TrustStrip() {
             key={text}
           >
             <span className="text-[19px] text-[#a7d0a5] max-[700px]:text-base">
-              {icon}
+              <FontAwesomeIcon icon={icon} />
             </span>
             <b>{text}</b>
           </div>
@@ -136,13 +154,15 @@ export function FeaturesSection() {
         <div className="grid grid-cols-3 gap-[15px] max-[700px]:grid-cols-1 max-[700px]:gap-[10px]">
           {features.map((feature) => (
             <article
-              className="rounded-xl border border-[#e9eee9] bg-white p-[25px] transition duration-200 hover:-translate-y-[3px] hover:border-[#d7e6d7] hover:shadow-[0_18px_50px_rgba(20,50,25,0.09)] max-[700px]:p-[19px]"
+              className={`rounded-xl border border-[#e9eee9] bg-white p-[25px] transition duration-200 hover:-translate-y-[3px] hover:border-[#d7e6d7] hover:shadow-[0_18px_50px_rgba(20,50,25,0.09)] max-[700px]:p-[19px] ${
+                feature.wide ? "col-span-2 max-[700px]:col-span-1" : ""
+              }`}
               key={feature.title}
             >
               <span
                 className={`grid size-[39px] place-items-center rounded-[11px] text-lg font-bold ${feature.color}`}
               >
-                {feature.icon}
+                <FontAwesomeIcon icon={feature.icon} />
               </span>
               <h3 className="mb-[7px] mt-[17px] font-liv-heading text-base font-bold max-[700px]:mb-[5px] max-[700px]:mt-3">
                 {feature.title}
@@ -175,7 +195,7 @@ export function StepsSection() {
                 {String(index + 1).padStart(2, "0")}
               </span>
               <div className="mb-3 grid size-[35px] place-items-center rounded-[10px] bg-[#e4efe3] text-liv-green">
-                {icon}
+                <FontAwesomeIcon icon={icon} />
               </div>
               <h3 className="mb-1.5 mt-0 font-liv-heading text-[15px] font-bold max-[700px]:text-[13px]">
                 {title}
